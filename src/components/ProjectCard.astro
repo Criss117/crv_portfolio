@@ -1,0 +1,34 @@
+---
+import ProjectPill from './ProjectPill.astro';
+
+interface Props {
+  project: {
+    title: string
+    description: string
+    tags: {
+        label: string;
+        Icon: (_props: Record<string, any>) => any;
+        className: string;
+    }[]
+    img: string
+    href: string
+    gitHub: string
+  }
+}
+
+const {title, description, tags, img, href, gitHub} = Astro.props.project
+---
+
+<article class="border rounded-xl border-green-700">
+  <div class="mx-3 mt-3">
+    <h3 class="text-3xl font-semibold text-indigo-400 mb-2">{title}</h3>  
+    <p class="text-lg mb-4 text-pretty text-slate-300">{description}</p>
+    <ul class="my-4 flex flex-wrap gap-x-2">
+      {tags.map(tag => <ProjectPill tech={tag}/>)}  
+    </ul>
+  </div>
+  <img 
+    class="aspect-[16/9] rounded-3xl shadow-slate-700 shadow-lg"
+    src={img} 
+    alt="captura del proyecto">
+</article>

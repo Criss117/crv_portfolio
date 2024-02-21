@@ -1,0 +1,48 @@
+---
+const routes = [
+  {
+    href: '#top',
+    label: 'Home'
+  },
+  {
+    href: '#about',
+    label: 'About'
+  },
+  {
+    href: '#experience',
+    label: 'Experience'
+  },
+  {
+    href: '#projects',
+    label: 'Projects'
+  },
+  {
+    href: '#contact',
+    label: 'Contact'
+  }
+]
+---
+
+<header class="
+  flex justify-center items-center 
+  p-3 w-full md:w-[70%] mx-auto fixed 
+  backdrop-blur-sm shadow-sm
+  bg-slate-300/10 mt-2
+  shadow-slate-300/20 rounded-full z-50
+  ">
+  <nav class="flex gap-x-10 flex-row opacity-90">
+    {
+      routes.map(({href,label}) => (
+        <a 
+          href={href}
+          class="
+            font-semibol after:transition-all relative
+            after:content-[''] hover:after:border-white
+            after:absolute after:border-b-2 after:bottom-0
+            after:left-0 after:hover:w-full after:w-0
+          "
+        >{label}</a>
+      ))
+    }
+  </nav>
+</header>

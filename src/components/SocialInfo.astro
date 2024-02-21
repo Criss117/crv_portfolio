@@ -1,0 +1,15 @@
+---
+import SocialPill from '../components/SocialPill.astro';
+import { SOCIALPILLS } from '../lib/data.astro';
+---
+
+<nav class="flex gap-2 mt-5 lg:mt-10 flex-wrap">
+  {
+    SOCIALPILLS.map(({label, link, Icon}) => (
+      <SocialPill href={link}>
+        <Icon class="size-4 md:size-6" slot='icon'/>
+        {label}  
+      </SocialPill>
+    ))
+  }
+</nav>

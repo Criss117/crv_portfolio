@@ -1,0 +1,25 @@
+---
+import {cn} from '../lib/utils'
+
+interface Props {
+  tech: {
+    label: string;
+    Icon: (_props: Record<string, any>) => any;
+    className: string;
+  }
+}
+
+const { tech } = Astro.props
+const {label, Icon, className} = tech
+---
+
+<li 
+  class={
+    cn(`
+      flex items-center flex-wrap 
+      gap-x-2 w-fit rounded-full 
+      px-2 py-1 bg-white/50` 
+      , className)}>
+  <Icon class="size-4 md:size-6" />
+  {label}
+</li>
