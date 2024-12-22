@@ -1,0 +1,37 @@
+---
+import { HEADER_NAV_ITEMS } from "@/lib/constants";
+---
+
+<footer class="border-b border-color">
+  <div
+    class="max-w-[1024px] mx-auto px-10 py-5 border-color border-x justify-between w-full flex md:flex-row flex-col gap-y-2"
+  >
+    <p class="text-color text-center">
+      Hecho con ❤️ por
+      <a
+        href="https://www.linkedin.com/in/cristian-viveros-69bab8129/"
+        class="font-bold"
+      >
+        Cristian Viveros
+      </a>
+    </p>
+
+    <ul
+      class="md:space-x-5 flex flex-col md:flex-row items-center justify-center"
+    >
+      {
+        HEADER_NAV_ITEMS.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "dark:text-dark-text-100 text-light-text-100 text-base font-semibold antialiased cursor-animated text-center",
+              item.className,
+            ]}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
