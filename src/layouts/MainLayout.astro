@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Header from "@/components/sections/Header.astro";
 import Cursor from "@/components/ui/Cursor.astro";
 import Footer from "@/components/sections/Footer.astro";
+import { BASE_URL } from "astro:env/server";
 ---
 
 <!doctype html>
@@ -11,8 +12,52 @@ import Footer from "@/components/sections/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Cristian's Portfolio</title>
+
+    <!-- Información básica SEO -->
+    <title>Cristian Viveros | Desarrollador Web Full Stack</title>
+    <meta
+      name="description"
+      content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, react, nextjs, nestjs."
+    />
+    <meta
+      name="keywords"
+      content="desarrollador web, portafolio, frontend, backend, full stack, javascript, react, nodejs, nextjs, typescript, tailwindcss, postgresql, nestjs, docker, github, linkedin, cristian viveros"
+    />
+    <meta name="author" content="Cristian Viveros" />
+
+    <!-- Open Graph para redes sociales -->
+    <meta
+      property="og:title"
+      content="Cristian Viveros | Desarrollador Web Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Portafolio profesional de Cristian Viveros. Desarrollador web especializado en javascript, react, nextjs, nestjs."
+    />
+    <meta property="og:image" content=`${BASE_URL}/og-image.jpg` />
+    <meta property="og:url" content={BASE_URL} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tuusuario" />
+    <meta name="twitter:title" content="Nombre Apellido | Desarrollador Web" />
+    <meta
+      name="twitter:description"
+      content="Portafolio profesional de [Tu Nombre]. Desarrollador web especializado en [tus especialidades]."
+    />
+    <meta
+      name="twitter:image"
+      content="https://tudominio.com/img/twitter-image.jpg"
+    /> -->
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Idioma y región -->
+    <meta http-equiv="content-language" content="es" />
+    <meta name="geo.region" content="Colombia: ES, MX, AR]" />
+
     <ClientRouter />
   </head>
   <body>
