@@ -22,7 +22,7 @@ const socials = [
 ] as const;
 ---
 
-<ul class="flex max-w-[450px] flex-wrap justify-center items-center gap-5">
+<ul class="flex max-w-[500px] flex-wrap justify-center items-center gap-5">
   {
     socials.map(({ name, Icon, href }) => (
       <a
@@ -30,8 +30,8 @@ const socials = [
         href={href}
         target="_blank"
         class:list={[
-          "flex rounded-lg px-2 py-1 items-center bg-dark-bg-100 dark:bg-gray-50 gap-x-2",
-          "hover:bg-light-primary-200 dark:hover:bg-gray-400 transition-colors cursor-animated",
+          "flex rounded-lg px-2 py-1 items-center bg-dark-bg-100 dark:bg-gray-50 gap-x-2 w-40",
+          "hover:bg-light-primary-200 dark:hover:bg-white/80 transition-colors cursor-animated",
         ]}
       >
         <Icon width={30} height={30} class="text-white dark:text-black" />

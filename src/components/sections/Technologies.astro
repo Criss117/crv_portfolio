@@ -1,0 +1,65 @@
+---
+import Docker from "@/assets/icons/technologies/docker.svg";
+import Nest from "@/assets/icons/technologies/nestjs.svg";
+import Next from "@/assets/icons/technologies/nextjs.svg";
+import Node from "@/assets/icons/technologies/nodejs.svg";
+import PostgreSql from "@/assets/icons/technologies/postgresql.svg";
+import React from "@/assets/icons/technologies/react.svg";
+import ReactQuery from "@/assets/icons/technologies/reactquery.svg";
+// import Sqlite from "@/assets/icons/technologies/sqlite.svg";
+import Tailwind from "@/assets/icons/technologies/tailwindcss.svg";
+import TypeScript from "@/assets/icons/technologies/typescript.svg";
+
+const technologies = [
+  {
+    name: "Tailwind",
+    Icon: Tailwind,
+  },
+  {
+    name: "React Query",
+    Icon: ReactQuery,
+  },
+  {
+    name: "Next",
+    Icon: Next,
+  },
+  {
+    name: "React",
+    Icon: React,
+  },
+  {
+    name: "TypeScript",
+    Icon: TypeScript,
+  },
+  {
+    name: "Node",
+    Icon: Node,
+  },
+  {
+    name: "Nest",
+    Icon: Nest,
+  },
+  {
+    name: "PostgreSql",
+    Icon: PostgreSql,
+  },
+  {
+    name: "Docker",
+    Icon: Docker,
+  },
+] as const;
+---
+
+<section class="border-b border-color relative">
+  <div class="max-w-[1024px] border-color border-x mx-auto px-10 py-5">
+    <ul class="list flex gap-x-2 justify-around">
+      {
+        technologies.map(({ name, Icon }) => (
+          <li>
+            <Icon width={50} height={50} class="text-white" />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
