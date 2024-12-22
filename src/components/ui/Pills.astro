@@ -1,0 +1,44 @@
+---
+import GitHub from "@assets/icons/github.svg";
+import LinkedIn from "@assets/icons/linkedln.svg";
+import ArrowDown from "@assets/icons/arrowdown.svg";
+
+const socials = [
+  {
+    name: "GitHub",
+    Icon: GitHub,
+    href: "https://github.com/Criss117",
+  },
+  {
+    name: "LinkedIn",
+    Icon: LinkedIn,
+    href: "https://www.linkedin.com/in/cristian-viveros-69bab8129/",
+  },
+  {
+    name: "descargar CV",
+    Icon: ArrowDown,
+    href: "https://www.linkedin.com/in/cristian-viveros-69bab8129/",
+  },
+] as const;
+---
+
+<ul class="flex max-w-[450px] flex-wrap justify-center items-center gap-5">
+  {
+    socials.map(({ name, Icon, href }) => (
+      <a
+        id="socials-pills"
+        href={href}
+        target="_blank"
+        class:list={[
+          "flex rounded-lg px-2 py-1 items-center bg-dark-bg-100 dark:bg-gray-50 gap-x-2",
+          "hover:bg-light-primary-200 dark:hover:bg-gray-400 transition-colors cursor-animated",
+        ]}
+      >
+        <Icon width={30} height={30} class="text-white dark:text-black" />
+        <span class="dark:text-black text-white mx-auto font-semibold">
+          {name}
+        </span>
+      </a>
+    ))
+  }
+</ul>

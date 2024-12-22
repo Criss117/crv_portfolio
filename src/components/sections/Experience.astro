@@ -1,0 +1,82 @@
+---
+import { SECTIONS } from "@/lib/constants";
+import Code from "@assets/icons/code.svg";
+import Building from "@assets/icons/building.svg";
+---
+
+<section
+  id={SECTIONS.experience.id}
+  aria-label={SECTIONS.experience.ariaLabel}
+  class="border-b border-color relative"
+>
+  <div
+    class="max-w-[1024px] border-color border-x mx-auto flex md:flex-row flex-col"
+  >
+    <div
+      class="md:w-1/2 border-color md:border-r border-b md:border-b-0 px-10 py-16"
+    >
+      <h4 class="text-2xl font-semibold">Experiencia</h4>
+      <ul class="mt-5 space-y-5">
+        <article class="flex justify-between">
+          <div class="flex items-center gap-x-2">
+            <Code width={35} height={35} class="dark:text-white text-black" />
+            <p>
+              Lorem ipsum dolor sit amet.
+              <span class="dark:text-gray-400 text-sm block">Freelance</span>
+            </p>
+          </div>
+          <p class="text-sm">junio 2022 - actualidad</p>
+        </article>
+        <article class="flex justify-between">
+          <div class="flex items-center gap-x-2">
+            <Code width={35} height={35} class="dark:text-white text-black" />
+            <p>
+              Lorem ipsum dolor sit amet. <span
+                class="dark:text-gray-400 text-sm block"
+              >
+                Freelance</span
+              >
+            </p>
+          </div>
+          <p class="text-sm">junio 2022 - junio 2023</p>
+        </article>
+      </ul>
+    </div>
+    <div class="md:w-1/2 p-5 px-10 py-16">
+      <h4 class="text-2xl font-semibold">Educación</h4>
+      <ul class="mt-5 space-y-5">
+        <article class="flex justify-between">
+          <div class="flex items-center gap-x-2">
+            <Building
+              width={35}
+              height={35}
+              class="dark:text-white text-black"
+            />
+            <h4>
+              Universidad del Cauca <span
+                class="dark:text-gray-400 text-sm block"
+                >Ingeniería de Sistemas</span
+              >
+            </h4>
+          </div>
+          <p class="text-sm">actualidad</p>
+        </article>
+        <article class="flex justify-between">
+          <div class="flex items-center gap-x-2">
+            <Building
+              width={35}
+              height={35}
+              class="dark:text-white text-black"
+            />
+            <h4>
+              Autodidacta <span class="dark:text-gray-400 text-sm block"
+                >Ingeniería de Sistemas</span
+              >
+            </h4>
+          </div>
+          <p class="text-sm">siempre</p>
+        </article>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import ArrowDown from "@assets/icons/arrowdown.svg";
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<div class="absolute bottom-10 right-1/2 translate-x-1/2">
+  <a
+    href={href}
+    aria-label={"go to " + label}
+    class:list={[
+      "jump rounded-full w-10 h-10 cursor-animated",
+      "bg-dark-primary-300 flex flex-col items-center justify-center",
+    ]}
+  >
+    <ArrowDown width={20} height={20} />
+  </a>
+</div>
+
+<style>
+  .jump {
+    animation: jump 1s ease-in-out infinite;
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

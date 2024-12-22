@@ -1,0 +1,27 @@
+---
+import { SECTIONS } from "@/lib/constants";
+import ProjectCard from "../ui/ProjectCard.astro";
+---
+
+<section
+  id={SECTIONS.proyects.id}
+  aria-label={SECTIONS.proyects.ariaLabel}
+  class="border-b border-color relative"
+>
+  <header
+    class="max-w-[1024px] border-color border-x h-full flex flex-col mx-auto pt-16"
+  >
+    <h2 class="text-5xl font-bold text-center">Proyectos</h2>
+  </header>
+  <div
+    class="max-w-[1024px] border-color border-x h-full flex flex-col mx-auto py-8"
+  >
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
+      {
+        Array(4)
+          .fill(0)
+          .map(() => <ProjectCard />)
+      }
+    </ul>
+  </div>
+</section>

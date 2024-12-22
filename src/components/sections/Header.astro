@@ -1,0 +1,56 @@
+---
+import { HEADER_NAV_ITEMS, SECTIONS } from "@/lib/constants";
+import ToogleDarkMode from "../ui/ToogleDarkMode.astro";
+import BurgerMenu from "../ui/BurgerMenu.astro";
+
+const pathname = Astro.url.pathname;
+---
+
+<header
+  class="w-full border-b border-color h-16 fixed top-0 z-40 backdrop-blur-sm"
+>
+  <nav
+    class="mx-auto border-x border-color px-5 h-full max-w-[1024px] flex justify-between items-center"
+  >
+    <a
+      href={pathname === "/" ? `#${SECTIONS.hero.id}` : "/"}
+      class="text-color text-lg font-bold bg-light-primary-100 dark:bg-dark-primary-100 rounded-full w-10 h-10 flex items-center justify-center"
+    >
+      <span class="text-center text-white dark:text-black">CRV</span>
+    </a>
+    <ul class="hidden md:flex justify-center items-center gap-x-5 h-full">
+      {
+        HEADER_NAV_ITEMS.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "dark:text-dark-text-100 text-light-text-100 nav-item text-base font-semibold antialiased cursor-animated",
+              item.className,
+            ]}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </ul>
+    <div class="flex justify-end items-center gap-x-5">
+      <ToogleDarkMode />
+      <BurgerMenu />
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav-item::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s;
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+</style>

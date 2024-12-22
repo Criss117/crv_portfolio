@@ -1,0 +1,85 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Header from "../components/sections/Header.astro";
+import Cursor from "@/components/ui/Cursor.astro";
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Cristian's Portfolio</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <Cursor />
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --selection-color: #fff;
+    --selection-bg-color: #000;
+  }
+
+  @font-face {
+    font-family: "Geist";
+    src: url("/fonts/Geist.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html,
+  body {
+    font-family: "Geist", sans-serif;
+    margin: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+    @apply dark:bg-dark-bg-200 bg-light-bg-100;
+  }
+
+  html.dark {
+    --selection-color: #000;
+    --selection-bg-color: #fff;
+  }
+
+  .border-color {
+    @apply dark:border-dark-bg-300 border-light-bg-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply dark:text-dark-text-100 text-light-text-100;
+  }
+
+  .text-color {
+    @apply dark:text-dark-text-100 text-light-text-100;
+  }
+
+  .invert-text-color {
+    @apply dark:text-light-text-100 text-dark-text-100;
+  }
+
+  ::selection {
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+  }
+
+  ::-webkit-selection {
+    background-color: #fff;
+    color: #000;
+  }
+</style>

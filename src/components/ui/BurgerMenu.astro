@@ -1,0 +1,75 @@
+---
+import { HEADER_NAV_ITEMS } from "@/lib/constants";
+import Menu from "@assets/icons/menu.svg";
+import X from "@assets/icons/x.svg";
+---
+
+<button class="md:hidden" id="burger-menu-open">
+  <Menu width={30} height={30} class="dark:text-white text-black" />
+</button>
+
+<nav
+  class:list={[
+    "fixed top-0 left-0 w-full h-screen -translate-x-[100%]",
+    "bg-light-bg-100 dark:bg-dark-bg-200 z-50 transition-all",
+    "duration-500 md:hidden flex flex-col justify-center items-center",
+  ]}
+  id="burger-menu"
+>
+  <button
+    class="absolute top-0 right-0 m-5 text-2xl"
+    id="burger-menu-close"
+    aria-label="Close menu"
+  >
+    <X width={30} height={30} class="dark:text-white text-black" />
+  </button>
+  <ul class="flex flex-col mx-auto gap-y-10">
+    {
+      HEADER_NAV_ITEMS.map((item) => (
+        <a
+          id="nav-item"
+          href={item.href}
+          class:list={[
+            "text-color nav-item text-base font-semibold antialiased",
+            "text-xl",
+            item.className,
+          ]}
+        >
+          {item.name}
+        </a>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const burgerMenuOpen =
+      document.querySelector<HTMLButtonElement>("#burger-menu-open");
+    const burgerMenuClose =
+      document.querySelector<HTMLButtonElement>("#burger-menu-close");
+    const nav = document.querySelector<HTMLDivElement>("#burger-menu");
+    const navItems = document.querySelectorAll<HTMLAnchorElement>("#nav-item");
+
+    if (!nav || !burgerMenuOpen || !burgerMenuClose) return;
+
+    const openMenu = () => {
+      nav.style.transform = "translateX(0)";
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    };
+
+    const closeMenu = () => {
+      nav.style.transform = "translateX(-100%)";
+      document.body.style.overflow = "unset";
+      document.body.style.height = "unset";
+    };
+
+    burgerMenuOpen.addEventListener("click", openMenu);
+    burgerMenuClose.addEventListener("click", closeMenu);
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", closeMenu);
+    });
+  });
+</script>

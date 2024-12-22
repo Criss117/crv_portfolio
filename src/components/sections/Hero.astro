@@ -1,0 +1,36 @@
+---
+import { SECTIONS } from "@/lib/constants";
+
+import Pills from "../ui/Pills.astro";
+import ToSectionButton from "../ui/ToSectionButton.astro";
+---
+
+<section
+  class="h-screen border-b border-color relative"
+  id={SECTIONS.hero.id}
+  aria-label={SECTIONS.hero.ariaLabel}
+>
+  <!-- <div class="h-1/5 max-w-[1024px] border-color border-x mx-auto"></div> -->
+  <div
+    class="max-w-[1024px] border-color border-x h-full flex flex-col items-center justify-center mx-auto px-5 space-y-5"
+  >
+    <h1 class="text-5xl font-bold text-center">
+      <span class="hidden md:inline-block">-</span> Cristian Viveros <span
+        class="hidden md:inline-block">-</span
+      >
+    </h1>
+    <p class="text-center text-lg text-wrap">
+      Enfocado en el <span class="font-semibold"> desarrollo web </span>
+      utilizando tecnologías JavaScript como React, Next.js y Node.js. Creación de
+      <span class="font-semibold"> aplicaciones modernas </span>
+      que combinan diseño y funcionalidad.
+      <span class="font-semibold"> Compromiso </span>
+      con el aprendizaje continuo y con la búsqueda de soluciones innovadoras en
+      el ámbito digital.
+    </p>
+
+    <Pills />
+  </div>
+  <ToSectionButton href="#projects" label="Proyectos" />
+</section>
+<!-- <div class="h-1/5 max-w-[1024px] border-color border-x mx-auto"></div> -->

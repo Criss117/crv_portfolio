@@ -1,0 +1,84 @@
+---
+import SUN from "@assets/icons/sun.svg";
+import MOON from "@assets/icons/moon.svg";
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  class:list={[
+    "rounded-full p-2.5 text-sm hover:bg-light-bg-200 focus:outline-none hover:animate-spin",
+    "focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700",
+  ]}
+  aria-label="Toggle theme"
+>
+  <SUN id="sun-icon" class="hidden" />
+  <MOON id="moon-icon" class="text-white" />
+</button>
+
+<script>
+  const getInitialTheme = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const updateTheme = (theme: "light" | "dark") => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+
+    localStorage.setItem("theme", theme);
+    updateButtonIcon(theme);
+  };
+
+  const updateButtonIcon = (theme: string) => {
+    const button = document.getElementById("theme-toggle");
+
+    if (!button) return;
+
+    const sunIcon = button.querySelector("#sun-icon");
+    const moonIcon = button.querySelector("#moon-icon");
+
+    if (!sunIcon || !moonIcon) return;
+
+    if (theme === "dark") {
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    } else {
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+    }
+  };
+
+  document.addEventListener("astro:page-load", () => {
+    const initialTheme = getInitialTheme();
+    updateTheme(initialTheme as "light" | "dark");
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        const newTheme = e.matches ? "dark" : "light";
+        updateTheme(newTheme);
+      });
+
+    const button = document.querySelector("#theme-toggle");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        const currentTheme = document.documentElement.classList.contains("dark")
+          ? "dark"
+          : "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        updateTheme(newTheme);
+      });
+    }
+  });
+</script>

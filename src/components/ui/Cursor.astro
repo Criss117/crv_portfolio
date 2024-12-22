@@ -1,0 +1,50 @@
+<div
+  class:list={[
+    "hidden border-2 w-5 h-5 dark:border-white border-black rounded-full",
+    "md:block fixed z-50 pointer-events-none cursor translate-x-1/2 translate-y-1/2",
+  ]}
+  id="cursor"
+>
+</div>
+
+<style>
+  .cursor {
+    transition:
+      width 0.3s,
+      height 0.3s;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const cursor = document.querySelector<HTMLDivElement>("#cursor");
+    const elements = document.querySelectorAll(".cursor-animated");
+
+    if (!cursor) return;
+
+    const cursorPos = cursor.getBoundingClientRect();
+    window.addEventListener("mousemove", (e) => {
+      cursor.dataset.x = e.clientX - cursorPos.width + "px";
+      cursor.dataset.y = e.clientY - cursorPos.height + "px";
+
+      cursor.style.left = e.clientX - cursorPos.width + "px";
+      cursor.style.top = e.clientY - cursorPos.height + "px";
+    });
+
+    if (!elements) return;
+
+    elements.forEach((pill) => {
+      pill.addEventListener("mouseenter", () => {
+        cursor.style.height = "25px";
+        cursor.style.width = "25px";
+      });
+    });
+
+    elements.forEach((pill) => {
+      pill.addEventListener("mouseleave", () => {
+        cursor.style.width = "20px";
+        cursor.style.height = "20px";
+      });
+    });
+  });
+</script>

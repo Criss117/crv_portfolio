@@ -1,0 +1,80 @@
+---
+import Pills from "@/components/ui/Pills.astro";
+import Book from "@/assets/icons/book.svg";
+import Medal from "@/assets/icons/medal.svg";
+import Network from "@/assets/icons/network.svg";
+import AppWindow from "@/assets/icons/appwindow.svg";
+import { SECTIONS } from "@/lib/constants";
+
+const ABOUT_ME = [
+  {
+    Icon: Book,
+    title: "Agilidad en la colaboración",
+    description:
+      "La flexibilidad y la adaptabilidad son esenciales en mi enfoque. Me adapto rápidamente a los cambios y trabajo eficientemente en entornos dinámicos, manteniendo siempre el foco en la entrega de resultados concretos y de alta calidad.",
+    className: "col-span-1",
+  },
+  {
+    Icon: Medal,
+    title: "Lo Que Me Distingue",
+    description:
+      "Mi pasión por el detalle y la constante búsqueda de mejora me diferencian. Siempre busco ir más allá de lo evidente, creando soluciones que no solo funcionan, sino que sorprenden por su calidad y efectividad. Mi capacidad para combinar habilidades técnicas con creatividad me permite aportar ideas únicas a cada proyecto, destacándome por ofrecer resultados que marcan la diferencia.",
+    className: "col-span-2",
+  },
+  {
+    Icon: Network,
+    title: "Lo Que Puedo Aportar a Tu Proyecto",
+    description:
+      "Puedo contribuir con una combinación de habilidades técnicas sólidas, creatividad y un enfoque orientado a resultados. Además de entregar soluciones de alta calidad, me enfoco en entender las metas de tu proyecto para garantizar que mi trabajo no solo cumpla con los requisitos, sino que impulse su éxito. Mi adaptabilidad y capacidad para trabajar en equipo aseguran una integración fluida en cualquier entorno, aportando valor desde el primer día.",
+    className: "col-span-2",
+  },
+  {
+    Icon: AppWindow,
+    title: "Compromiso personalizado",
+    description:
+      "Trato cada proyecto como un desafío personal. Mi objetivo es entender las necesidades y metas únicas de cada cliente o empresa, para brindar soluciones que se alineen perfectamente con sus objetivos comerciales.",
+    className: "col-span-1",
+  },
+] as const;
+---
+
+<section
+  class="min-h-screen border-b border-color relative"
+  id={SECTIONS.about.id}
+  aria-label={SECTIONS.about.ariaLabel}
+>
+  <header
+    class="max-w-[1024px] border-color border-x mx-auto flex pt-16 flex-col justify-center items-center"
+  >
+    <h4 class="text-5xl mx-auto font-bold mb-16 text-center">
+      Trabajemos en tu proximo proyecto
+    </h4>
+    <Pills />
+  </header>
+  <article class="max-w-[1024px] border-color border-x mx-auto pt-16 px-10">
+    <p>
+      Desarrollador apasionado por crear soluciones digitales que impactan. Mi
+      formación como <span class="font-bold"> ingeniero de sistemas, </span>
+      combinada con mi dedicación autodidacta, me ha permitido trabajar con las tecnologías
+      más demandadas del <span class="font-bold">
+        desarrollo web y móvil.
+      </span>
+    </p>
+  </article>
+  <article class="max-w-[1024px] border-color border-x mx-auto pt-16 px-10">
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+        ABOUT_ME.map(({ Icon, title, className, description }) => (
+          <li class:list={["border rounded-lg p-5 w-full", className]}>
+            <Icon width={40} height={40} class="dark:text-white text-black" />
+            <h4 class="text-xl font-semibold">{title}</h4>
+            <p class="mt-2">
+              <span class="dark:text-gray-400 text-sm">{description}</span>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+    <!-- <Pills /> -->
+  </article>
+</section>
