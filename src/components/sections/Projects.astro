@@ -1,6 +1,9 @@
 ---
 import { SECTIONS } from "@/lib/constants";
 import ProjectCard from "../ui/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <section
@@ -18,9 +21,9 @@ import ProjectCard from "../ui/ProjectCard.astro";
   >
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
       {
-        Array(4)
-          .fill(0)
-          .map(() => <ProjectCard />)
+        projects.map((project) => (
+          <ProjectCard title={project.data.title} slug={project.data.slug} />
+        ))
       }
     </ul>
   </div>

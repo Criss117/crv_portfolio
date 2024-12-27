@@ -2,6 +2,8 @@
 import { HEADER_NAV_ITEMS } from "@/lib/constants";
 import Menu from "@assets/icons/menu.svg";
 import X from "@assets/icons/x.svg";
+
+const pathname = Astro.url.pathname;
 ---
 
 <button class="md:hidden" id="burger-menu-open">
@@ -28,7 +30,7 @@ import X from "@assets/icons/x.svg";
       HEADER_NAV_ITEMS.map((item) => (
         <a
           id="nav-item"
-          href={item.href}
+          href={pathname === "/" ? item.href : `/${item.href}`}
           class:list={[
             "text-color nav-item text-base font-semibold antialiased",
             "text-xl",

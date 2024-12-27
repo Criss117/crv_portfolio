@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Project 1",
+    "slug": "project-1",
+    "tech": [
+      "React",
+      "NextJS",
+      "PostgreSQL",
+      "React",
+      "NextJS",
+      "PostgreSQL",
+      "React",
+      "NextJS",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "title": "Project 2",
+    "slug": "project-2",
+    "tech": ["React", "NextJS", "PostgreSQL"]
+  },
+  {
+    "title": "Project 3",
+    "slug": "project-3",
+    "tech": ["React", "NextJS", "PostgreSQL"]
+  }
+]
