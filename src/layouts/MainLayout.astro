@@ -130,4 +130,20 @@ import { BASE_URL } from "astro:env/server";
     background-color: #fff;
     color: #000;
   }
+
+  .truncate-text {
+    display: -webkit-box;
+    /* Número máximo de líneas visibles */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega "..." al final si el texto se corta */
+  }
+
+  .truncate-2 {
+    -webkit-line-clamp: 2;
+  }
+
+  .truncate-5 {
+    -webkit-line-clamp: 5;
+  }
 </style>

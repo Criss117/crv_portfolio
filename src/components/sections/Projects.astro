@@ -3,7 +3,9 @@ import { SECTIONS } from "@/lib/constants";
 import ProjectCard from "../ui/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects");
+const projects = await getCollection("projects").then((p) => {
+  return p.map((p) => p.data);
+});
 ---
 
 <section
@@ -22,7 +24,12 @@ const projects = await getCollection("projects");
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
       {
         projects.map((project) => (
-          <ProjectCard title={project.data.title} slug={project.data.slug} />
+          <ProjectCard
+            title={project.title}
+            slug={project.slug}
+            image={project.images.principal}
+            shortDescription={project.short_description}
+          />
         ))
       }
     </ul>

@@ -1,27 +1,39 @@
 [
   {
-    "title": "Project 1",
-    "slug": "project-1",
-    "tech": [
-      "React",
-      "NextJS",
-      "PostgreSQL",
-      "React",
-      "NextJS",
-      "PostgreSQL",
-      "React",
-      "NextJS",
-      "PostgreSQL"
-    ]
+    "title": "Unicauca - clone",
+    "slug": "unicauca-clone",
+    "demo": "https://unicaucacrv.netlify.app/",
+    "tech": ["Astro", "Svelte", "TailwindCSS"],
+    "short_description": "Clon de la página de la Universidad del Cauca con ##Astro##, ##Svelte## y ##TailwindCSS##, replicando su diseño, estructura y funcionalidades dinámicas como menús y carruseles, con rendimiento optimizado y diseño responsive.",
+    "description": "Clon de la página principal de la Universidad del Cauca, desarrollado con ##Astro## para generar un sitio web estático optimizado, ##Svelte## para crear componentes interactivos y dinámicos, y ##TailwindCSS## para un diseño moderno y completamente responsive. El sitio replica fielmente la estructura y estilo de la página original, incluyendo encabezado, secciones de noticias, eventos y pie de página, con menús desplegables y carruseles dinámicos. Este proyecto combina rendimiento, interactividad y diseño adaptativo, siendo una excelente práctica para integrar estas tecnologías.",
+    "images": {
+      "principal": "/projects/unicauca-clone/unicauca-hero.webp",
+      "rest": [
+        "/projects/unicauca-clone/unicauca-clone-2.webp",
+        "/projects/unicauca-clone/unicauca-clone-3.webp"
+      ]
+    }
   },
   {
     "title": "Project 2",
     "slug": "project-2",
-    "tech": ["React", "NextJS", "PostgreSQL"]
+    "tech": ["React", "NextJS", "PostgreSQL"],
+    "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
+    "images": {
+      "principal": "https://placehold.co/600x400",
+      "rest": ["https://placehold.co/600x400", "https://placehold.co/600x400"]
+    }
   },
   {
     "title": "Project 3",
     "slug": "project-3",
-    "tech": ["React", "NextJS", "PostgreSQL"]
+    "tech": ["React", "NextJS", "PostgreSQL"],
+    "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
+    "images": {
+      "principal": "https://placehold.co/600x400",
+      "rest": ["https://placehold.co/600x400", "https://placehold.co/600x400"]
+    }
   }
 ]
