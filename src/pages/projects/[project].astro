@@ -26,7 +26,11 @@ const restOfProjects = allProjects
   .map((p) => p.data);
 ---
 
-<MainLayout>
+<MainLayout
+  title={project.title}
+  canonical={project.slug}
+  description={project.short_description}
+>
   <div class="border-b border-color">
     <section
       class="max-w-[1024px] mx-auto pt-32 pb-16 border-x border-color px-10"

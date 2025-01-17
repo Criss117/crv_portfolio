@@ -1,9 +1,18 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { BASE_URL } from "astro:env/server";
+
 import Header from "@/components/sections/Header.astro";
 import Cursor from "@/components/ui/Cursor.astro";
 import Footer from "@/components/sections/Footer.astro";
-import { BASE_URL } from "astro:env/server";
+
+interface Props {
+  title?: string;
+  canonical?: string;
+  description?: string;
+}
+
+const { title, canonical, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,25 +23,28 @@ import { BASE_URL } from "astro:env/server";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Información básica SEO -->
-    <title>Cristian Viveros | Desarrollador Web Full Stack</title>
+    <title>Cristian Viveros | {title || "Desarrollador Web Full Stack"}</title>
     <meta
       name="description"
-      content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, react, nextjs, nestjs."
+      content={description ||
+        "Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."}
     />
     <meta
       name="keywords"
       content="desarrollador web, portafolio, frontend, backend, full stack, javascript, react, nodejs, nextjs, typescript, tailwindcss, postgresql, nestjs, docker, github, linkedin, cristian viveros"
     />
     <meta name="author" content="Cristian Viveros" />
+    <link rel="canonical" href={BASE_URL + `/${canonical}`} />
 
     <!-- Open Graph para redes sociales -->
     <meta
       property="og:title"
-      content="Cristian Viveros | Desarrollador Web Full Stack"
+      content=`Cristian Viveros | ${title || "Desarrollador Web Full Stack"}`
     />
     <meta
       property="og:description"
-      content="Portafolio profesional de Cristian Viveros. Desarrollador web especializado en javascript, react, nextjs, nestjs."
+      content={description ||
+        "Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."}
     />
     <meta property="og:image" content=`${BASE_URL}/og-image.jpg` />
     <meta property="og:url" content={BASE_URL} />

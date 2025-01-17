@@ -27,7 +27,7 @@ const { title, slug, image, shortDescription } = Astro.props;
     />
   </figure>
   <div class="px-2 mt-2">
-    <h4 class="text-xl font-semibold">{title}</h4>
+    <h3 class="text-xl font-semibold">{title}</h3>
     <p
       class="text-start text-sm truncate-text truncate-5 text-balance"
       set:html={replaceWithSpan(shortDescription, {

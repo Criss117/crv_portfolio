@@ -46,9 +46,9 @@ const ABOUT_ME = [
   <header
     class="max-w-[1024px] border-color border-x mx-auto flex pt-16 flex-col justify-center items-center"
   >
-    <h4 class="text-5xl mx-auto font-bold mb-16 text-center">
+    <h2 class="text-5xl mx-auto font-bold mb-16 text-center">
       Trabajemos en tu proximo proyecto
-    </h4>
+    </h2>
     <Pills />
   </header>
   <article class="max-w-[1024px] border-color border-x mx-auto pt-16 px-10">
@@ -67,7 +67,7 @@ const ABOUT_ME = [
         ABOUT_ME.map(({ Icon, title, className, description }) => (
           <li class:list={["border rounded-lg p-5 w-full", className]}>
             <Icon width={40} height={40} class="dark:text-white text-black" />
-            <h4 class="text-xl font-semibold">{title}</h4>
+            <h3 class="text-xl font-semibold">{title}</h3>
             <p class="mt-2">
               <span class="dark:text-gray-400 text-sm">{description}</span>
             </p>
