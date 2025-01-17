@@ -1,33 +1,35 @@
 ---
+import { Picture } from "astro:assets";
+
+import TechBadge from "./TechBadge.astro";
+
 import { replaceWithSpan } from "@/lib/utils";
-import { Image } from "astro:assets";
 
 interface Props {
   title: string;
   slug: string;
   image: string;
   shortDescription: string;
+  tech: string[];
 }
 
-const { title, slug, image, shortDescription } = Astro.props;
+const { title, slug, image, shortDescription, tech } = Astro.props;
 ---
 
 <a
   class="flex flex-col justify-center p-5 space-y-4 cursor-animated hover:dark:bg-dark-bg-300 hover:bg-light-bg-300 rounded-lg transition-colors"
   href=`/projects/${slug}`
 >
-  <figure>
-    <Image
-      transition:name={`${slug}-image`}
-      src={image}
-      alt="project"
-      class="aspect-video rounded-lg object-cover"
-      width={800}
-      height={450}
-    />
-  </figure>
+  <Picture
+    transition:name={`${slug}-image`}
+    src={image}
+    alt="project"
+    class="aspect-video rounded-lg object-cover"
+    width={800}
+    height={450}
+  />
   <div class="px-2 mt-2">
-    <h3 class="text-xl font-semibold">{title}</h3>
+    <h3 class="text-2xl font-semibold">{title}</h3>
     <p
       class="text-start text-sm truncate-text truncate-5 text-balance"
       set:html={replaceWithSpan(shortDescription, {
@@ -35,4 +37,7 @@ const { title, slug, image, shortDescription } = Astro.props;
       })}
     />
   </div>
+  <ul class="flex gap-x-5 gap-y-2 flex-wrap">
+    {tech.map((tech) => <TechBadge text={tech} />)}
+  </ul>
 </a>

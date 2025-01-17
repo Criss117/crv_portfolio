@@ -1,27 +1,27 @@
 export const HEADER_NAV_ITEMS = [
   {
     name: "Inicio",
-    href: "#home",
+    href: "/#home",
     className: "",
   },
   {
     name: "Proyectos",
-    href: "#projects",
+    href: "/#projects",
     className: "",
   },
   {
     name: "Experiencia",
-    href: "#experience",
+    href: "/#experience",
     className: "",
   },
   {
     name: "Sobre mi",
-    href: "#about",
+    href: "/#about",
     className: "",
   },
   {
     name: "Contacto",
-    href: "#contact",
+    href: "/#contact",
     className: "",
   },
 ] as const;

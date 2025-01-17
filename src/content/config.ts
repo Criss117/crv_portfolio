@@ -11,9 +11,11 @@ const projects = defineCollection({
     short_description: z.string(),
     images: z.object({
       principal: z.string(),
-      rest: z.array(z.string()).max(2),
+      rest: z.array(z.string()).max(4),
     }),
     tech: z.array(z.string()),
+    repository: z.string(),
+    real_site: z.string().optional(),
   }),
 });
 

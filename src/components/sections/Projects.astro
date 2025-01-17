@@ -29,6 +29,7 @@ const projects = await getCollection("projects").then((p) => {
             slug={project.slug}
             image={project.images.principal}
             shortDescription={project.short_description}
+            tech={project.tech}
           />
         ))
       }

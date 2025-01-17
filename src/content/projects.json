@@ -1,6 +1,23 @@
 [
   {
-    "title": "Unicauca - clone",
+    "title": "Ta Web",
+    "slug": "ta-web",
+    "tech": ["NextJS", "SQLite", "Prisma", "TailwindCSS", "shadcn"],
+    "short_description": "Sistema de gestión empresarial local que permite a pequeños negocios ##administrar## su inventario y clientes de manera eficiente, sin necesidad de conexión a internet. El proyecto fue construido utilizando tecnologías modernas del ecosistema ##JavaScript##, priorizando la experiencia de usuario y el rendimiento.",
+    "description": "Esta aplicación de gestión de inventarios y clientes, desarrollada con ##Next.js##, ##TailwindCSS## y ##SQLite##, está diseñada para operar de manera local, ofreciendo una solución eficiente y funcional. Permite gestionar productos con control de stock, registrar clientes y su historial de compras, además de llevar un seguimiento detallado de créditos y pagos pendientes. Su interfaz intuitiva, basada en ##TailwindCSS##, garantiza una experiencia de usuario ##fluida## y ##agradable##, mientras que la base de datos SQLite asegura un almacenamiento local ##rápido y confiable##, ideal para pequeños negocios.",
+    "images": {
+      "principal": "/projects/ta-web/ta_web_hero.webp",
+      "rest": [
+        "/projects/ta-web/ta_web_clients_1.webp",
+        "/projects/ta-web/ta_web_clients_2.webp",
+        "/projects/ta-web/ta_web_products_1.webp",
+        "/projects/ta-web/ta_web_products_2.webp"
+      ]
+    },
+    "repository": "https://github.com/Criss117/ta_web"
+  },
+  {
+    "title": "UniCauca - clone",
     "slug": "unicauca-clone",
     "demo": "https://unicaucacrv.netlify.app/",
     "tech": ["Astro", "Svelte", "TailwindCSS"],
@@ -12,28 +29,26 @@
         "/projects/unicauca-clone/unicauca-clone-2.webp",
         "/projects/unicauca-clone/unicauca-clone-3.webp"
       ]
-    }
+    },
+    "repository": "https://github.com/Criss117/unicauca-clone",
+    "real_site": "https://www.unicauca.edu.co/"
   },
   {
-    "title": "Project 2",
-    "slug": "project-2",
-    "tech": ["React", "NextJS", "PostgreSQL"],
-    "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
+    "title": "Castillo Sport - Clone",
+    "slug": "castillo-sport-clone",
+    "tech": ["Astro", "Svelte", "TailwindCSS"],
+    "short_description": "Clon del e-commerce Castillo Sport construido con ##Astro##, ##Svelte## y ##TailwindCSS##, que consume la API de ##FakeStore## para simular productos. Ofrece navegación fluida, detalles de productos y ##carrito interactivo##, destacando ##rendimiento y diseño responsivo.##",
+    "description": "Esta aplicación es un clon del e-commerce Castillo Sport desarrollado con ##Astro##, ##Svelte## y ##TailwindCSS##, que ofrece una experiencia moderna y optimizada para la navegación web. La aplicación consume la API de FakeStore para simular productos reales, permitiendo explorar categorías, ver detalles de cada producto y añadirlos al carrito. Gracias a la combinación de ##Astro y Svelte##, el sitio logra un rendimiento excepcional y una experiencia de usuario interactiva, mientras que ##TailwindCSS## asegura un diseño atractivo y responsivo. Es una solución ideal para mostrar cómo se puede integrar tecnologías modernas en un entorno dinámico.",
     "images": {
-      "principal": "https://placehold.co/600x400",
-      "rest": ["https://placehold.co/600x400", "https://placehold.co/600x400"]
-    }
-  },
-  {
-    "title": "Project 3",
-    "slug": "project-3",
-    "tech": ["React", "NextJS", "PostgreSQL"],
-    "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum labore impedit asperiores nulla aperiam explicabo ullam sit et vitae magnam saepe debitis sapiente, illum rem, sequi amet dolorum dolor aut.",
-    "images": {
-      "principal": "https://placehold.co/600x400",
-      "rest": ["https://placehold.co/600x400", "https://placehold.co/600x400"]
-    }
+      "principal": "/projects/castillo-sport/cs_hero.webp",
+      "rest": [
+        "/projects/castillo-sport/cs_2.webp",
+        "/projects/castillo-sport/cs_3.webp",
+        "/projects/castillo-sport/cs_4.webp"
+      ]
+    },
+    "repository": "https://github.com/Criss117/castillosport",
+    "demo": "https://castillosport.netlify.app/",
+    "real_site": "https://castillosport.com/"
   }
 ]
