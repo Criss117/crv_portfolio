@@ -21,7 +21,7 @@ const projects = await getCollection("projects").then((p) => {
   <div
     class="max-w-[1024px] border-color border-x h-full flex flex-col mx-auto py-8"
   >
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 md:px-5">
       {
         projects.map((project) => (
           <ProjectCard
