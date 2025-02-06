@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import { BASE_URL } from "astro:env/server";
 
 import Header from "@/components/sections/Header.astro";
@@ -20,10 +19,13 @@ const { title, canonical, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Información básica SEO -->
-    <title>Cristian Viveros | {title || "Desarrollador Web Full Stack"}</title>
+    <title>Cristian Viveros | {title || "Desarrollador Web"}</title>
     <meta
       name="description"
       content={description ||
@@ -31,7 +33,7 @@ const { title, canonical, description } = Astro.props;
     />
     <meta
       name="keywords"
-      content="desarrollador web, portafolio, frontend, backend, full stack, javascript, react, nodejs, nextjs, typescript, tailwindcss, postgresql, nestjs, docker, github, linkedin, cristian viveros"
+      content="desarrollador web, portafolio, frontend, backend, javascript, react, nodejs, nextjs, typescript, tailwindcss, postgresql, nestjs, docker, github, linkedin, cristian viveros"
     />
     <meta name="author" content="Cristian Viveros" />
     <link rel="canonical" href={BASE_URL + `/${canonical}`} />
@@ -39,7 +41,7 @@ const { title, canonical, description } = Astro.props;
     <!-- Open Graph para redes sociales -->
     <meta
       property="og:title"
-      content=`Cristian Viveros | ${title || "Desarrollador Web Full Stack"}`
+      content=`Cristian Viveros | ${title || "Desarrollador Web"}`
     />
     <meta
       property="og:description"
@@ -69,8 +71,6 @@ const { title, canonical, description } = Astro.props;
     <!-- Idioma y región -->
     <meta http-equiv="content-language" content="es" />
     <meta name="geo.region" content="Colombia: ES, MX, AR" />
-
-    <ClientRouter />
   </head>
   <body>
     <Cursor />

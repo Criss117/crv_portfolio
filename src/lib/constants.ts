@@ -19,11 +19,11 @@ export const HEADER_NAV_ITEMS = [
     href: "/#about",
     className: "",
   },
-  {
-    name: "Contacto",
-    href: "/#contact",
-    className: "",
-  },
+  // {
+  //   name: "Contacto",
+  //   href: "/#contact",
+  //   className: "",
+  // },
 ] as const;
 
 export const SECTIONS = {

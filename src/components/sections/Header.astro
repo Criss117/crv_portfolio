@@ -1,11 +1,7 @@
 ---
-import { HEADER_NAV_ITEMS, SECTIONS } from "@/lib/constants";
+import { HEADER_NAV_ITEMS } from "@/lib/constants";
 import ToogleDarkMode from "../ui/ToogleDarkMode.astro";
 import BurgerMenu from "../ui/BurgerMenu.astro";
-
-const pathname = Astro.url.pathname;
-
-const href = pathname === "/" ? `#${SECTIONS.hero.id}` : "/";
 ---
 
 <header
@@ -15,8 +11,9 @@ const href = pathname === "/" ? `#${SECTIONS.hero.id}` : "/";
     class="mx-auto border-x border-color px-5 h-full max-w-[1024px] flex justify-between items-center"
   >
     <a
-      href={href}
-      class="text-color text-lg font-bold bg-light-primary-100 dark:bg-dark-primary-100 rounded-full w-10 h-10 flex items-center justify-center"
+      href="/"
+      class="text-color text-lg font-bold bg-light-primary-100 dark:bg-dark-primary-100 rounded-full
+      w-10 h-10 flex items-center justify-center cursor-animated"
     >
       <span class="text-center text-white dark:text-black">CRV</span>
     </a>
@@ -24,7 +21,7 @@ const href = pathname === "/" ? `#${SECTIONS.hero.id}` : "/";
       {
         HEADER_NAV_ITEMS.map((item) => (
           <a
-            href={pathname === "/" ? item.href : `/${item.href}`}
+            href={item.href}
             class:list={[
               "dark:text-dark-text-100 text-light-text-100 nav-item text-base font-semibold antialiased cursor-animated",
               item.className,

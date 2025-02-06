@@ -22,7 +22,7 @@
     "demo": "https://unicaucacrv.netlify.app/",
     "tech": ["Astro", "Svelte", "TailwindCSS"],
     "short_description": "Clon de la página de la Universidad del Cauca con ##Astro##, ##Svelte## y ##TailwindCSS##, replicando su diseño, estructura y funcionalidades dinámicas como menús y carruseles, con rendimiento optimizado y diseño responsive.",
-    "description": "Clon de la página principal de la Universidad del Cauca, desarrollado con ##Astro## para generar un sitio web estático optimizado, ##Svelte## para crear componentes interactivos y dinámicos, y ##TailwindCSS## para un diseño moderno y completamente responsive. El sitio replica fielmente la estructura y estilo de la página original, incluyendo encabezado, secciones de noticias, eventos y pie de página, con menús desplegables y carruseles dinámicos. Este proyecto combina rendimiento, interactividad y diseño adaptativo, siendo una excelente práctica para integrar estas tecnologías.",
+    "description": "Clon de la página principal de la Universidad del Cauca, desarrollado con ##Astro## para generar un sitio web estático optimizado, ##Svelte## para crear componentes interactivos y dinámicos, y ##TailwindCSS## para un diseño moderno y completamente responsive. El sitio replica la estructura y estilo de la página original, incluyendo encabezado, secciones de noticias, eventos y pie de página, con menús desplegables y carruseles dinámicos. Este proyecto combina rendimiento, interactividad y diseño adaptativo, siendo una excelente práctica para integrar estas tecnologías.",
     "images": {
       "principal": "/projects/unicauca-clone/unicauca-hero.webp",
       "rest": [

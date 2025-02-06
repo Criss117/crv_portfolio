@@ -36,8 +36,8 @@ const { title, slug, image, shortDescription, tech } = Astro.props;
         className: "font-semibold",
       })}
     />
+    <ul class="flex gap-x-5 gap-y-2 flex-wrap mt-5">
+      {tech.map((tech) => <TechBadge text={tech} />)}
+    </ul>
   </div>
-  <ul class="flex gap-x-5 gap-y-2 flex-wrap">
-    {tech.map((tech) => <TechBadge text={tech} />)}
-  </ul>
 </a>
