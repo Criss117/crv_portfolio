@@ -9,11 +9,11 @@ export const HEADER_NAV_ITEMS = [
     href: "/#projects",
     className: "",
   },
-  {
-    name: "Experiencia",
-    href: "/#experience",
-    className: "",
-  },
+  // {
+  //   name: "Experiencia",
+  //   href: "/#experience",
+  //   className: "",
+  // },
   {
     name: "Sobre mi",
     href: "/#about",

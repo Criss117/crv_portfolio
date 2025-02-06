@@ -45,7 +45,7 @@ const pathname = Astro.url.pathname;
 </nav>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const burgerMenuOpen =
       document.querySelector<HTMLButtonElement>("#burger-menu-open");
     const burgerMenuClose =
@@ -58,13 +58,11 @@ const pathname = Astro.url.pathname;
     const openMenu = () => {
       nav.style.transform = "translateX(0)";
       document.body.style.overflow = "hidden";
-      document.body.style.height = "100vh";
     };
 
     const closeMenu = () => {
       nav.style.transform = "translateX(-100%)";
       document.body.style.overflow = "unset";
-      document.body.style.height = "unset";
     };
 
     burgerMenuOpen.addEventListener("click", openMenu);

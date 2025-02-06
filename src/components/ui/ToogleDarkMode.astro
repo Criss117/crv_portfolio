@@ -58,7 +58,7 @@ import MOON from "@assets/icons/moon.svg";
     }
   };
 
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const initialTheme = getInitialTheme();
     updateTheme(initialTheme as "light" | "dark");
 
