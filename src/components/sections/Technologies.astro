@@ -50,13 +50,15 @@ const technologies = [
 ] as const;
 ---
 
-<section class="border-b border-color relative">
-  <div class="max-w-7xl border-color border-x mx-auto px-10 py-5">
-    <ul class="list flex gap-2 justify-around flex-wrap">
+<section class="border-b border-color">
+  <div class="max-w-7xl border-color mx-auto h-full">
+    <ul
+      class="grid grid-cols-3 lg:grid-cols-9 auto-rows-fr border-x border-color"
+    >
       {
-        technologies.map(({ name, Icon }) => (
-          <li>
-            <Icon width={50} height={50} class="text-white" />
+        technologies.map(({ Icon }) => (
+          <li class=" border-ctx border-b lg:border-b-0 [&:not(:last-child)]:border-r [&:nth-last-of-type(-n+3)]:border-b-0 border-color -m-0.5px flex items-center justify-center p-1 md:py-2 lg:aspect-square">
+            <Icon width={50} height={50} class="text-white mx-auto" />
           </li>
         ))
       }

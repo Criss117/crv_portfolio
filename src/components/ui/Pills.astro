@@ -15,7 +15,7 @@ const socials = [
     href: "https://www.linkedin.com/in/cristian-viveros-69bab8129/",
   },
   {
-    name: "descargar CV",
+    name: "CV",
     Icon: ArrowDown,
     href: "https://www.linkedin.com/in/cristian-viveros-69bab8129/",
   },
@@ -30,14 +30,12 @@ const socials = [
         href={href}
         target="_blank"
         class:list={[
-          "flex rounded-lg px-2 py-1 items-center bg-dark-bg-100 dark:bg-gray-50 gap-x-2 w-40",
+          "flex rounded-lg p-2 items-center justify-center bg-dark-bg-100 dark:bg-gray-50 gap-x-2 w-40",
           "hover:bg-light-primary-200 dark:hover:bg-white/80 transition-colors cursor-animated",
         ]}
       >
         <Icon width={30} height={30} class="text-white dark:text-black" />
-        <span class="dark:text-black text-white mx-auto font-semibold">
-          {name}
-        </span>
+        <span class="dark:text-black text-white font-semibold">{name}</span>
       </a>
     ))
   }

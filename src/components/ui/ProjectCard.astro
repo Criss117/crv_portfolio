@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 
 import TechBadge from "./TechBadge.astro";
 
@@ -17,10 +17,10 @@ const { title, slug, image, shortDescription, tech } = Astro.props;
 ---
 
 <a
-  class="flex flex-col justify-center p-2 md:p-5 space-y-4 cursor-animated hover:dark:bg-dark-bg-300 hover:bg-light-bg-300 rounded-lg transition-colors"
+  class="flex flex-col p-2 md:p-5 space-y-4 cursor-animated hover:dark:bg-dark-bg-300 hover:bg-light-bg-300 rounded-lg transition-colors"
   href=`/projects/${slug}`
 >
-  <Picture
+  <Image
     transition:name={`${slug}-image`}
     src={image}
     alt="project"
@@ -28,14 +28,16 @@ const { title, slug, image, shortDescription, tech } = Astro.props;
     width={800}
     height={450}
   />
-  <div class="px-2 mt-2">
-    <h3 class="text-2xl font-semibold">{title}</h3>
-    <p
-      class="text-start text-sm truncate-text truncate-5 text-balance"
-      set:html={replaceWithSpan(shortDescription, {
-        className: "font-semibold",
-      })}
-    />
+  <div class="px-2 mt-2 flex justify-between flex-col h-full">
+    <div>
+      <h3 class="text-2xl font-semibold">{title}</h3>
+      <p
+        class="text-start text-sm truncate-text truncate-5 text-balance flex-1"
+        set:html={replaceWithSpan(shortDescription, {
+          className: "font-semibold",
+        })}
+      />
+    </div>
     <ul class="flex gap-x-5 gap-y-2 flex-wrap mt-5">
       {tech.map((tech) => <TechBadge text={tech} />)}
     </ul>
