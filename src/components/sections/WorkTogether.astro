@@ -1,80 +1,201 @@
 ---
-import Pills from "@/components/ui/Pills.astro";
+import { Image } from "astro:assets";
+
 import Book from "@/assets/icons/book.svg";
 import Medal from "@/assets/icons/medal.svg";
 import Network from "@/assets/icons/network.svg";
 import AppWindow from "@/assets/icons/appwindow.svg";
+
+import Aguile from "@assets/about/agilidad-en-la-colaboracion.png";
+import Compromiso from "@assets/about/compromiso-personalizado.png";
+import LoQueMeDistingue from "@assets/about/lo-que-me-distingue.png";
+import LoQuePuedoAportar from "@assets/about/lo-que-puedo-aportar-a-tu-proyecto.png";
+
+import Pills from "@/components/ui/Pills.astro";
 import { SECTIONS } from "@/lib/constants";
 
 const ABOUT_ME = [
   {
     Icon: Book,
+    slug: "agilidad-en-la-colaboracion",
     title: "Agilidad en la colaboración",
     description:
       "La flexibilidad y la adaptabilidad son esenciales en mi enfoque. Me adapto rápidamente a los cambios y trabajo eficientemente en entornos dinámicos, manteniendo siempre el foco en la entrega de resultados concretos y de alta calidad.",
     className: "col-span-1",
+    image: Aguile,
   },
   {
     Icon: Medal,
+    slug: "lo-que-me-distingue",
     title: "Lo Que Me Distingue",
     description:
       "Mi pasión por el detalle y la constante búsqueda de mejora me diferencian. Siempre busco ir más allá de lo evidente, creando soluciones que no solo funcionan, sino que sorprenden por su calidad y efectividad. Mi capacidad para combinar habilidades técnicas con creatividad me permite aportar ideas únicas a cada proyecto, destacándome por ofrecer resultados que marcan la diferencia.",
     className: "col-span-2",
+    image: LoQueMeDistingue,
   },
   {
     Icon: Network,
+    slug: "lo-que-puedo-aportar-a-tu-proyecto",
     title: "Lo Que Puedo Aportar a Tu Proyecto",
     description:
       "Puedo contribuir con una combinación de habilidades técnicas sólidas, creatividad y un enfoque orientado a resultados. Además de entregar soluciones de alta calidad, me enfoco en entender las metas de tu proyecto para garantizar que mi trabajo no solo cumpla con los requisitos, sino que impulse su éxito. Mi adaptabilidad y capacidad para trabajar en equipo aseguran una integración fluida en cualquier entorno, aportando valor desde el primer día.",
     className: "col-span-2",
+    image: LoQuePuedoAportar,
   },
   {
     Icon: AppWindow,
+    slug: "compromiso-personalizado",
     title: "Compromiso personalizado",
     description:
       "Trato cada proyecto como un desafío personal. Mi objetivo es entender las necesidades y metas únicas de cada cliente o empresa, para brindar soluciones que se alineen perfectamente con sus objetivos comerciales.",
     className: "col-span-1",
+    image: Compromiso,
   },
 ] as const;
+
+const aboutScript = ABOUT_ME.map(({ slug, title, description }) => ({
+  slug,
+  title,
+  description,
+}));
 ---
 
 <section
-  class="min-h-screen border-b border-color relative"
-  id={SECTIONS.about.id}
+  class="border-b border-color"
+  id="about"
   aria-label={SECTIONS.about.ariaLabel}
+  data-selected={ABOUT_ME[0].slug}
 >
-  <header
-    class="max-w-7xl border-color border-x mx-auto flex pt-16 flex-col justify-center items-center"
-  >
-    <h2 class="text-5xl mx-auto font-bold mb-16 text-center">
-      Trabajemos en tu proximo proyecto
-    </h2>
-    <Pills />
-  </header>
-  <article class="max-w-7xl border-color border-x mx-auto pt-16 px-3 md:px-10">
-    <p>
-      Desarrollador apasionado por crear soluciones digitales que impactan. Mi
-      formación como <span class="font-bold"> ingeniero de sistemas, </span>
-      combinada con mi dedicación autodidacta, me ha permitido trabajar con las tecnologías
-      más demandadas del <span class="font-bold">
-        desarrollo web y móvil.
-      </span>
-    </p>
-  </article>
-  <article class="max-w-7xl border-color border-x mx-auto py-16 px-3 md:px-10">
-    <ul class="grid grid-cols-1 md:grid-cols-3 md:gap-x-4 gap-y-4">
-      {
-        ABOUT_ME.map(({ Icon, title, className, description }) => (
-          <li class:list={["border rounded-lg p-5 w-full", className]}>
-            <Icon width={40} height={40} class="dark:text-white text-black" />
-            <h3 class="text-xl font-semibold">{title}</h3>
-            <p class="mt-2">
-              <span class="dark:text-gray-400 text-sm">{description}</span>
-            </p>
-          </li>
-        ))
-      }
-    </ul>
-    <!-- <Pills /> -->
-  </article>
+  <div class="max-w-7xl border-color border-x mx-auto py-16 px-9 space-y-10">
+    <header class="flex items-center flex-col space-y-5">
+      <p class="text-center">
+        Desarrollador apasionado por crear soluciones digitales que impactan. Mi
+        formación como <span class="font-bold"> ingeniero de sistemas, </span>
+        combinada con mi dedicación autodidacta, me ha permitido trabajar con las
+        tecnologías más demandadas del <span class="font-bold">
+          desarrollo web y móvil.
+        </span>
+      </p>
+
+      <Pills />
+    </header>
+
+    <div class="lg:flex lg:space-y-0 lg:space-x-5 space-y-5">
+      <ul
+        class="lg:w-2/5 lg:space-y-2 grid md:grid-cols-2 lg:flex lg:flex-col justify-between h-[400px]"
+      >
+        {
+          ABOUT_ME.map(({ slug, Icon, title }) => (
+            <button
+              type="button"
+              data-about-slug={slug}
+              class:list={[
+                "about-button flex gap-x-2 items-center py-5 border border-color w-full relative px-2 group border-l-8 border-l-white",
+                ABOUT_ME[0].slug === slug
+                  ? "selected-about-button"
+                  : "bg-about-button",
+              ]}
+            >
+              <Icon
+                width={40}
+                height={40}
+                class="dark:text-white text-black group-hover:text-black transition-colors duration-300"
+              />
+              <p class="font-semibold dark:text-white text-black group-hover:text-black transition-colors duration-300">
+                {title}
+              </p>
+            </button>
+          ))
+        }
+      </ul>
+      <div
+        class="lg:w-3/5 border border-color flex items-center justify-center bg-[#1e1e1e] aspect-[7/4] max-h-[400px]"
+      >
+        {
+          ABOUT_ME.map(({ image, slug, title }) => (
+            <Image
+              src={image}
+              data-about-slug={slug}
+              alt={title}
+              width={1280}
+              height={720}
+              class:list={[
+                "about-images rounded-lg aspect-[7/4] object-contain",
+                ABOUT_ME[0].image.src !== image.src && "hidden",
+              ]}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>
+
+<script is:inline define:vars={{ aboutScript }}>
+  const section = document.querySelector("#about");
+  const buttons = section.querySelectorAll(".about-button");
+  const images = section.querySelectorAll(".about-images");
+
+  if (!section || !buttons || !images) return;
+
+  function updateSelected(slug) {
+    buttons.forEach((button) => {
+      if (button.dataset.aboutSlug === slug) {
+        button.classList.remove("bg-about-button");
+        button.classList.add("selected-about-button");
+      } else {
+        button.classList.remove("selected-about-button");
+        button.classList.add("bg-about-button");
+      }
+    });
+
+    images.forEach((image) => {
+      if (image.dataset.aboutSlug === slug) {
+        image.classList.remove("hidden");
+      } else {
+        image.classList.add("hidden");
+      }
+    });
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const slug = e.currentTarget.dataset.aboutSlug;
+
+      console.log(slug);
+      updateSelected(slug);
+      updateDescription(slug);
+
+      section.setAttribute("data-selected", slug);
+    });
+  });
+</script>
+
+<style>
+  /* Efecto hover */
+  .bg-about-button:is(.dark *):hover {
+    background-position: left bottom; /* Mueve el fondo a la izquierda */
+  }
+
+  .bg-about-button:not(.dark *):hover {
+    background-position: left bottom; /* Mueve el fondo a la derecha */
+  }
+
+  .bg-about-button:not(.dark *) {
+    background: linear-gradient(to left, #f0f5f9 50%, #bfc7d1 50%);
+    background-position: right bottom; /* Inicia desde la izquierda */
+    transition: background-position 0.3s ease-in-out; /* Animación suave */
+    background-size: 200% 100%; /* Doble ancho para permitir la animación */
+  }
+
+  .bg-about-button:is(.dark *) {
+    background: linear-gradient(to right, #fff 50%, #161616 50%);
+    background-position: right bottom; /* Inicia desde la derecha */
+    transition: background-position 0.3s ease-in-out; /* Animación suave */
+    background-size: 200% 100%; /* Doble ancho para permitir la animación */
+  }
+
+  .selected-about-button {
+    @apply bg-light-bg-300 dark:bg-white dark:[&>*]:text-black;
+  }
+</style>

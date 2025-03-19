@@ -1,0 +1,30 @@
+[
+	{
+		"icon": "Book",
+		"slug": "agilidad-en-la-colaboracion",
+		"title": "Agilidad en la colaboración",
+		"description": "La flexibilidad y la adaptabilidad son esenciales en mi enfoque. Me adapto rápidamente a los cambios y trabajo eficientemente en entornos dinámicos, manteniendo siempre el foco en la entrega de resultados concretos y de alta calidad.",
+		"className": "col-span-1"
+	},
+	{
+		"icon": "Medal",
+		"slug": "lo-que-me-distingue",
+		"title": "Lo Que Me Distingue",
+		"description": "Mi pasión por el detalle y la constante búsqueda de mejora me diferencian. Siempre busco ir más allá de lo evidente, creando soluciones que no solo funcionan, sino que sorprenden por su calidad y efectividad. Mi capacidad para combinar habilidades técnicas con creatividad me permite aportar ideas únicas a cada proyecto, destacándome por ofrecer resultados que marcan la diferencia.",
+		"className": "col-span-2"
+	},
+	{
+		"icon": "Network",
+		"slug": "lo-que-puedo-aportar-a-tu-proyecto",
+		"title": "Lo Que Puedo Aportar a Tu Proyecto",
+		"description": "Puedo contribuir con una combinación de habilidades técnicas sólidas, creatividad y un enfoque orientado a resultados. Además de entregar soluciones de alta calidad, me enfoco en entender las metas de tu proyecto para garantizar que mi trabajo no solo cumpla con los requisitos, sino que impulse su éxito. Mi adaptabilidad y capacidad para trabajar en equipo aseguran una integración fluida en cualquier entorno, aportando valor desde el primer día.",
+		"className": "col-span-2"
+	},
+	{
+		"icon": "AppWindow",
+		"slug": "compromiso-personalizado",
+		"title": "Compromiso personalizado",
+		"description": "Trato cada proyecto como un desafío personal. Mi objetivo es entender las necesidades y metas únicas de cada cliente o empresa, para brindar soluciones que se alineen perfectamente con sus objetivos comerciales.",
+		"className": "col-span-1"
+	}
+]
