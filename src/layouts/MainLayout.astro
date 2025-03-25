@@ -1,4 +1,6 @@
 ---
+import Analytics from "@vercel/analytics/astro";
+
 import { BASE_URL } from "astro:env/server";
 
 import Header from "@/components/sections/Header.astro";
@@ -80,6 +82,7 @@ const { title, canonical, description } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <Analytics />
   </body>
 </html>
 
