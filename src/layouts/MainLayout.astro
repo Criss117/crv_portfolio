@@ -38,39 +38,40 @@ const { title, canonical, description } = Astro.props;
     <meta name="author" content="Cristian Viveros" />
     <link rel="canonical" href={BASE_URL + `/${canonical}`} />
 
-    <!-- Open Graph para redes sociales -->
-    <meta
-      property="og:title"
-      content=`Cristian Viveros | ${title || "Desarrollador Web"}`
-    />
-    <meta
-      property="og:description"
-      content={description ||
-        "Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."}
-    />
-    <meta property="og:image" content=`${BASE_URL}/og-image.jpg` />
-    <meta property="og:url" content={BASE_URL} />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <!-- <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@tuusuario" />
-    <meta name="twitter:title" content="Nombre Apellido | Desarrollador Web" />
-    <meta
-      name="twitter:description"
-      content="Portafolio profesional de [Tu Nombre]. Desarrollador web especializado en [tus especialidades]."
-    />
-    <meta
-      name="twitter:image"
-      content="https://tudominio.com/img/twitter-image.jpg"
-    /> -->
-
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
 
     <!-- Idioma y región -->
     <meta http-equiv="content-language" content="es" />
     <meta name="geo.region" content="Colombia: ES, MX, AR" />
+
+    <!-- HTML Meta Tags -->
+    <title>Cristian Viveros | Desarrollador Web</title>
+    <meta
+      name="description"
+      content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://crv-portfolio.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cristian Viveros | Desarrollador Web" />
+    <meta
+      property="og:description"
+      content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."
+    />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="crv-portfolio.vercel.app" />
+    <meta property="twitter:url" content="https://crv-portfolio.vercel.app/" />
+    <meta name="twitter:title" content="Cristian Viveros | Desarrollador Web" />
+    <meta
+      name="twitter:description"
+      content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
   </head>
   <body>
     <Cursor />
