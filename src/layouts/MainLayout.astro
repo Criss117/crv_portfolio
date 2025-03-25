@@ -38,7 +38,7 @@ const { title, canonical, description } = Astro.props;
       content="desarrollador web, portafolio, frontend, backend, javascript, react, nodejs, nextjs, typescript, tailwindcss, postgresql, nestjs, docker, github, linkedin, cristian viveros"
     />
     <meta name="author" content="Cristian Viveros" />
-    <link rel="canonical" href={BASE_URL + `/${canonical}`} />
+    <link rel="canonical" href={BASE_URL + `/${canonical || ""}`} />
 
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
