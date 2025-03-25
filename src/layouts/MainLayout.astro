@@ -55,25 +55,25 @@ const { title, canonical, description } = Astro.props;
     />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://crv-portfolio.vercel.app/" />
+    <meta property="og:url" content={BASE_URL} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Cristian Viveros | Desarrollador Web" />
     <meta
       property="og:description"
       content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."
     />
-    <meta property="og:image" content="/cr_og.webp" />
+    <meta property="og:image" content=`${BASE_URL}/cr_og.webp` />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="crv-portfolio.vercel.app" />
-    <meta property="twitter:url" content="https://crv-portfolio.vercel.app/" />
+    <meta property="twitter:url" content={BASE_URL} />
     <meta name="twitter:title" content="Cristian Viveros | Desarrollador Web" />
     <meta
       name="twitter:description"
       content="Portafolio profesional de cristian viveros. Desarrollador web especializado en javascript, React, NextJS, NestJS, Astro."
     />
-    <meta name="twitter:image" content="/cr_og.webp" />
+    <meta name="twitter:image" content=`${BASE_URL}/cr_og.webp` />
   </head>
   <body>
     <Cursor />
